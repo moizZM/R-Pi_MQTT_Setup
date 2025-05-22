@@ -82,13 +82,4 @@ mosquitto_pub -t "test/topic" -m "Hello"
 
 - Reads LDR values and publishes formatted message:
 
-On Raspberry Pi:
-
-````bash
-mosquitto_sub -t "solartracker/ldr"
-````
 --- 
-
-Output:
-
-`Top: 735 | Bottom: 689 | Left: 702 | Right: 710`
