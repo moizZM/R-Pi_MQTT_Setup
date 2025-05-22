@@ -13,28 +13,28 @@
  **2. Mosquitto MQTT Installation Attempt (Failed)**
 
  
--Tried installing Mosquitto:
+- Tried installing Mosquitto:
 
 ````bash
 sudo apt install -y mosquitto mosquitto-clients
 ````
--**Error:**
+- **Error:**
 
 ````vbnet
 E: Release 'clients' for mosquitto was not found
 ````
--**Cause**: Mosquitto was removed from Raspberry Pi OS Bookworm's default repo.
+- **Cause**: Mosquitto was removed from Raspberry Pi OS Bookworm's default repo.
 
 ---
 
 **3. Fix Attempt with PPA (Failed)**
 
--Tried adding the mosquitto-dev PPA:
+- Tried adding the mosquitto-dev PPA:
 
 ````bash
 sudo add-apt-repository ppa:mosquitto-dev/mosquitto-ppa
 ````
--**Result**: Incompatible with Bookworm.
+- **Result**: Incompatible with Bookworm.
 ---
 
 **4. Final Working Solution**
@@ -63,7 +63,7 @@ sudo systemctl start mosquitto
 
 **5. MQTT Broker Testing**
 
--Verified via two terminals:
+- Verified via two terminals:
 
 ````bash
 mosquitto_sub -t "test/topic"
@@ -72,9 +72,9 @@ mosquitto_pub -t "test/topic" -m "Hello"
 ---
 
 **6. Arduino Uno WiFi Rev2 Integration**
--Arduino connects to WiFi and MQTT server (Raspberry Pi)
+- Arduino connects to WiFi and MQTT server (Raspberry Pi)
 
--Reads LDR values and publishes formatted message:
+- Reads LDR values and publishes formatted message:
 
 ````cpp
 String payload = "Top: " + String(top) +
