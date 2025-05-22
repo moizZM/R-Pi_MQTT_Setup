@@ -63,7 +63,7 @@ sudo systemctl start mosquitto
 
 **5. MQTT Broker Testing**
 
-- Verified via two terminals:
+**Verified via two terminals:**
 
 - 1. **Terminal 1**
 ````bash
