@@ -1,0 +1,25 @@
+sudo apt update
+sudo apt install -y wget
+
+wget http://ftp.debian.org/debian/pool/main/m/mosquitto/mosquitto_2.0.11-1_armhf.deb
+wget http://ftp.debian.org/debian/pool/main/m/mosquitto/mosquitto-clients_2.0.11-1_armhf.deb
+
+sudo dpkg -i mosquitto_2.0.11-1_armhf.deb
+sudo dpkg -i mosquitto-clients_2.0.11-1_armhf.deb
+
+sudo apt --fix-broken install
+
+
+sudo systemctl enable mosquitto
+sudo systemctl start mosquitto
+
+
+mosquitto_sub -t "test/topic"
+
+
+mosquitto_pub -t "test/topic" -m "It works!"
+
+
+
+
+
